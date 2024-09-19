@@ -1,8 +1,14 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 
+
 int main(){
+    SetConsoleCP (1251);
+    SetOutputConsoleCp (1251);
+    
+    
     cout<<"Привіт"<< endl;
 
     cout<<"Скажіть скільки вам років, для перевірки на повонолітність"<< endl;
