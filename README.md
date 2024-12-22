@@ -1,48 +1,9 @@
-# -*- mode: python ; coding: utf-8 -*-
+import os
+from firebase_admin import credentials, initialize_app
 
-block_cipher = None
+# Путь к файлу JSON относительно текущего скрипта
+cred_path = os.path.join(os.path.dirname(__file__), 'python-596c2-firebase-adminsdk-5keys-234ba198ec.json')
+cred = credentials.Certificate(cred_path)
+initialize_app(cred)
 
-a = Analysis(
-    ['fefe.py'],
-    pathex=['.'],
-    binaries=[],
-    datas=[('C:/Project/Launcher/python-596c2-firebase-adminsdk-5keys-234ba198ec.json', '.')],
-    hiddenimports=[],
-    hookspath=[],
-    hooksconfig={},
-    runtime_hooks=[],
-    excludes=[],
-    win_no_prefer_redirects=False,
-    win_private_assemblies=False,
-    cipher=block_cipher,
-    noarchive=False,
-)
-pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
-exe = EXE(
-    pyz,
-    a.scripts,
-    [],
-    exclude_binaries=True,
-    name='fefe',
-    debug=False,
-    bootloader_ignore_signals=False,
-    strip=False,
-    upx=True,
-    upx_exclude=[],
-    runtime_tmpdir=None,
-    console=False,
-    disable_windowed_traceback=False,
-    target_arch=None,
-    codesign_identity=None,
-    entitlements_file=None,
-)
-coll = COLLECT(
-    exe,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
-    strip=False,
-    upx=True,
-    upx_exclude=[],
-    name='fefe',
-)
+print("Firebase инициализирован")
