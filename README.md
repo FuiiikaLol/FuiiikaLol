@@ -3,10 +3,10 @@
 block_cipher = None
 
 a = Analysis(
-    ['main.py'],
+    ['fefe.py'],
     pathex=['.'],
     binaries=[],
-    datas=[('C:/python-596c2-firebase-adminsdk-5keys-234ba198ec.json', '.')],
+    datas=[('C:/Project/Launcher/python-596c2-firebase-adminsdk-5keys-234ba198ec.json', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -23,7 +23,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='main',
+    name='fefe',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -44,5 +44,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='main',
+    name='fefe',
 )
